@@ -35,7 +35,7 @@ Dans le cas de l'**IA symbolique**, l'avantage est que les décisions prises son
 
 L'inconvénient est qu'il est parfois très difficile pour les experts d'expliciter les règles qu'ils suivent. Une bonne part de nos décisions est prise sans qu'on puisse vraiment expliquer tous les sous-cas que l'on peut rencontrer, et l'intuition de l'expert, qui fait souvent sa qualité, rend le codage des règles délicat.
 
-Dans le cas de l'**IA numérique**, les algorithmes se basent exclusivement sur les exemples qu'on lui fournit pour composer sa décision. Avec énormément d'exemples (au-delà de ce qu'un humain pourrait traiter), l'algorithme va extraire ses propres règles. C'est un gros avantage, puisqu'on n'a plus besoin d'expliciter les raisonnements.
+Dans le cas de l'**IA numérique**, *les algorithmes se basent exclusivement sur les exemples qu'on lui fournit pour composer sa décision*. Avec énormément d'exemples (au-delà de ce qu'un humain pourrait traiter), l'algorithme va extraire ses propres règles. C'est un gros avantage, puisqu'on n'a plus besoin d'expliciter les raisonnements.
 
 En revanche, la façon dont l'algorithme prendra sa décision sera très peu comparable à la façon dont un humain aurait géré la situation. Il est donc parfois difficile de savoir pourquoi un algorithme commet une erreur et difficile de la corriger, par exemple.
 
