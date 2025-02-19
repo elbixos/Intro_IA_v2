@@ -146,7 +146,7 @@ Si vous trouvez des ressemblances avec la classification, c'est normal. En gros,
 
   (le véhicule).
 
-####Le clustering (partitionnement de données)
+#### Le clustering (partitionnement de données)
 
 Le dernier problème est un peu différent.
 
@@ -181,3 +181,49 @@ def classify(taille, poids):
 Dans le code qui précède, l'intelligence de votre programme vient directement de vous. Vous implémentez dans votre programme votre propre logique. L'Apprentissage Automatique ne fonctionne pas du tout comme cela. En apprentissage automatique, on dispose d'exemples, à partir desquels notre programme va apprendre, parfois longuement, comment prendre sa décision.
 
 Ce cours est donc une façon totalement nouvelle pour vous de concevoir des programmes.
+
+### QCM d'auto-évaluation
+
+Pour vous aider à vous y retrouver entre ces trois problèmes classiques, et avoir une idée de la diversité de situations qu'ils recouvrent, voici quelques exemples, dans lesquels je vous demande de reconnaître à quel problème la situation peut-elle être ramenée. Assurez-vous donc de lire attentivement la question et la consigne. 
+
+#### Question 1
+Imaginons qu'on veuille faire un programme permettant de reconnaître, à partir d'une image, si l'objet présent dans l'image est un chien ou un chat ou un poney.
+
+De quel type de problème de machine learning s'agit-il ?
+- Clustering
+- Classification
+- Régression
+
+#### Question 2
+Imaginons qu'on veuille faire un programme permettant de déplacer un personnage de jeu vidéo à l'aide d'un joystick numérique.
+
+De quel type de problème de machine learning s'agit-il ?
+- Clustering
+- Classification
+- Régression
+
+#### Question 3
+Imaginons qu'on veuille faire un programme permettant de déplacer un personnage de jeu vidéo à l'aide d'un joystick analogique.
+
+De quel type de problème de machine learning s'agit-il ?
+- Clustering
+- Classification
+- Régression
+
+#### Question 4
+Vous êtes en charge d'analyser les données clients d'une chaîne de grande distribution, l'objectif étant de définir des groupes types de consommateurs, afin d'adapter la stratégie commerciale du groupe à ces clients.
+
+De quel type de problème de machine learning s'agit-il ?
+- Clustering
+- Classification
+- Régression
+
+#### Question 5
+Vous devez programmer un correcteur orthographique dans un traitement de texte.
+
+De quel type de problème de machine learning s'agit-il ?
+- Clustering
+- Classification
+- Régression
+
+
