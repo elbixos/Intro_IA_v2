@@ -278,7 +278,8 @@ Comme premier algorithme de clustering, on pourrait procéder comme suit :
 Reprenons notre exemple simplifié précédent. Nous voudrions à partir d'exemples de taille et poids connus, apprendre à déduire le sexe d'un individu inconnu. Pour cela, il faut impérativement que pour chaque exemple connu, nous sachions quel est son sexe. Nos données, pour chaque exemple, indiquent donc le poids et de la taille (qui sont les caractéristiques), mais aussi le sexe de l'individu. C'est ce sexe que nous essayerons de deviner. On l'appelle le label associé à chaque exemple (ou sa classe).
 
 Nos données prennent maintenant la forme suivante :
-|Taille	Poids	Label
+
+|Taille	| Poids	| Label |
 |:---------------:|:---------------:|:---------------:|
 | 1.8707 |	68.7103 |	homme |
 | 1.5430 |	63.2235 |	femme |
