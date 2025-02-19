@@ -103,3 +103,81 @@ Inversement, les métiers où les situations sont les plus différentes d'un cas
 
 Depuis 2014, une nouveauté (les Generative Adversarial Networks ou GAN) a même permis aux IA d'atteindre des capacités de création (en musique, arts plastiques, design, mode ...). Ces IA sont capables de générer des choses nouvelles, ressemblant aux exemples qui lui sont fournis pour un résultat très bluffant. On peut donc imaginer que pour de la production de masse, ces IA remplacent rapidement toute une frange de la population d'artistes/artisans de ces domaines (ne laissant que des postes de création artistique originale).
 
+## L'IA non fantasmée
+
+Dans ce cours, il s'agit de commencer à aborder des techniques dites d' « Intelligence Artificielle », dans le domaine de l'Apprentissage Automatique (ou Machine Learning en anglais).
+
+### Les trois problèmes de base
+
+Commençons par voir quels problèmes les plus fréquents nous voulons résoudre en apprentissage automatique. Ils sont au nombre de trois et sont détaillés dans les sections qui viennent.
+
+#### La classification
+
+Si, à partir d'informations bien définies et communes à tous les exemples, on souhaite reconnaître qu'un objet ou une situation fait partie d'une catégorie, on parlera d'un problème de **classification**.
+
+Évidemment, à ce stade, il est délicat pour vous de comprendre ce dont je parle. Prenons donc un exemple :
+
+Imaginons que notre programme travaille sur des personnes. Pour chaque personne, nous disposons d'informations : sa taille / son poids / le nombre de cigarettes qu'il fume par jour. Un problème de **classification** pourrait consister à décider si une personne est un homme ou une femme (2 catégories).
+
+*Notez bien qu'en 2022, je suis bien conscient des problèmes que pose la non binarité. Notre capacité à créer des programmes capables de réaliser efficacement cette tâche ne signifie pas du tout qu'il faudrait les utiliser dans la vie quotidienne. Cet exemple a en fait plusieurs avantages : tout le monde a à peu près une idée des différences existant en moyenne entre hommes et femmes en termes de poids, taille, hygiène de vie. Tout le monde a aussi en tête des contre-exemples générateurs d'erreurs. C'est un excellent exemple pédagogiquement.*
+
+Cette conceptualisation recouvre un grand nombre de problèmes, dont voici quelques exemples, des plus directes aux plus éloignées :
+
+- À partir de données médicales, prédire la pathologie d'un patient parmi N possibles.
+- À partir d'une photo de visage, savoir quelle est la personne représentée sur la photo. Ici, nous aurions autant de catégories que de personnes possibles.
+- À partir d'une série de notes de musique, prédire la note suivante. Notez que ceci permet de composer de la musique de proche en proche.
+
+C'est l'une des forces de cette modélisation : elle répond à une énorme variété de problèmes de la vie courante.
+
+#### La régression
+
+Si, à partir d'informations bien définies et communes à tous les exemples, on souhaite prédire la valeur associée à un objet ou une situation, on parlera d'un problème de **régression**.
+
+Ici encore, un exemple sera plus parlant :
+
+Imaginons que notre programme travaille sur des personnes. Pour chaque personne, nous disposons d'informations : sa taille / son poids / le nombre de cigarettes qu'il fume par jour. Un problème de régression pourrait consister à prédire son espérance de vie.
+
+Voici quelques exemples de problèmes de régression pour vous donner une idée de la variété de tâches que ce problème recouvre :
+
+- en fonction de la valeur d'une action boursière tout au long d'une période passée, prédire sa valeur le lendemain.
+- à partir de vidéo et d'informations sur un véhicule, prédire la vitesse à choisir et l'angle de rotation du volant permettant de passer une courbe.
+
+Si vous trouvez des ressemblances avec la classification, c'est normal. En gros, la classification consiste à choisir une catégorie que l'on pourrait représenter par un entier. La régression doit, elle, choisir une prédiction, souvent dans $$\mathbb{R}$$ ou $$\mathbb{R}^2$$ (l'action boursière)
+
+  (le véhicule).
+
+####Le clustering (partitionnement de données)
+
+Le dernier problème est un peu différent.
+
+À partir d'un ensemble d'objets ou de situations, on souhaite les regrouper en sous ensembles homogènes. On parle alors d'un « problème de clustering ».
+
+Ici encore, un exemple vous aidera sans doute à mieux comprendre :
+
+Imaginons que notre programme travaille sur des personnes. Pour chaque personne, nous disposons d'informations : sa taille / son poids / le nombre de cigarettes qu'il fume par jour. Un problème de clustering pourrait consister à chercher, parmi l'ensemble des personnes dont on dispose, à extraire deux groupes de personnes se ressemblant le plus. L'un des résultats possibles serait deux groupes d'individus, dont une analyse a posteriori montrerait qu'ils sont liés à l'hygiène de vie des personnes.
+
+Je vais insister un peu sur une confusion commune quand on attaque le domaine de l'apprentissage automatique : la distinction entre classification et clustering.
+
+En classification, les catégories sont prédéfinies. Le problème consiste à ranger chaque exemple qui se présente dans la bonne catégorie. En clustering, il s'agit de découvrir des catégories pertinentes. Le problème consiste à regrouper des exemples, afin d'obtenir les groupes les plus homogènes possibles.
+
+Les application des problèmes de clustering sont également innombrables :
+
+- En marketing, en fonction de fichiers clients, trouver les types de consommateurs associés à un produit.
+- À partir de données météorologiques, trouver les types de temps existants dans une région.
+- À partir de données physiologiques, définir des groupes d'animaux (refaire une classification du vivant).
+
+### Petite remarque d'importance
+
+Éventuellement, en lisant ce qui précède, vous avez commencé à réfléchir pour concevoir vous-même un programme qui puisse, par exemple, reconnaître si une personne est un homme ou une femme (les autres problèmes sont plus complexes). Peut-être quelque chose comme (en python) :
+
+```python
+def classify(taille, poids):
+  if taille > 1.73 :
+    return "homme"
+  else :
+    return "femme"
+```
+
+Dans le code qui précède, l'intelligence de votre programme vient directement de vous. Vous implémentez dans votre programme votre propre logique. L'Apprentissage Automatique ne fonctionne pas du tout comme cela. En apprentissage automatique, on dispose d'exemples, à partir desquels notre programme va apprendre, parfois longuement, comment prendre sa décision.
+
+Ce cours est donc une façon totalement nouvelle pour vous de concevoir des programmes.
