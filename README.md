@@ -10,6 +10,8 @@ voici les liens vers les parties du cours :
 1. [Formalisation](Cours/01_formalisation.md)
 2. [Apprentissage par optimisation](Cours/02_optimisation.md)
 3. [Introduction aux réseaux de neurones](Cours/03_Presentation_DNN.md)
+4. [Exemples d'application](Cours/04_exemples_application.md)
+5. [Conclusion des pages de base](Cours\05_conclusion_pages_de_base.md)
 
 ### Pages de niveau 1
 
