@@ -18,9 +18,9 @@ voici les liens vers les parties du cours :
 0. [Introduction et objectifs](Cours/10_introduction_pages_niveau1.md) **tout ce qui est après est à faire**
 1. [Bases d'exemples](Cours\11_bases_d_exemples.md) 
 2. [Performances](Cours\12_performances.md)
-3. [Algos de classification](Cours\13_algos_classif.md)
-4. [Algos de régression](Cours\14_algos_regression.md)
-5. [Algos de clustering](Cours\15_algos_clustering.md)
+3. [Algorithmes de classification](Cours\13_algos_classif.md)
+4. [Algorithmes de régression](Cours\14_algos_regression.md)
+5. [Algorithmes de clustering](Cours\15_algos_clustering.md)
 6. [Conclusion pages de niveau 1](Cours\16_conclusion_niveau1.md)
 
 ### Pages de niveau 2
@@ -36,5 +36,9 @@ voici les liens vers les parties du cours :
 0. [QCM](Cours\25_qcm.md)
 
 ## Travaux pratiques
+
+1. [TPs de classification](Cours\31_tp_classif.md)
+2. [TP de régression](Cours\32_tp_regression.md)
+3. [TP de clustering](Cours\33_tp_clustering.md)
 
 
