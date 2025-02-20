@@ -44,7 +44,7 @@ On parle d'**apprentissage supervisé** lorsque **chaque exemple est accompagné
 
 Les applications de classification et de régression vues auparavant entrent dans ce cadre.
 
-On parle d'**apprentissage non supervisé* lorsque **chaque exemple n'est pas accompagné de la bonne réponse attendue**.
+On parle d'**apprentissage non supervisé** lorsque **chaque exemple n'est pas accompagné de la bonne réponse attendue**.
 
 C'est le cas par exemple du clustering vu avant. Il existe d'autres tâches non supervisées, qui ne seront pas abordées dans ce cadre. On peut noter aussi qu'il existe de l'apprentissage semi-supervisé, dans lequel les algorithmes essayent d'apprendre à prendre une bonne décision, en prédisant eux mêmes la bonne réponse. Ce point ne sera pas non plus abordé dans ce cours, ou nous nous concentrerons sur les problèmes les plus classiques.
 
