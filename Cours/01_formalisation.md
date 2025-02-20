@@ -164,3 +164,26 @@ Je pense que ce qui précède est facile à comprendre vu que n'importe quelle i
 Un autre problème majeur est le suivant. Admettons que mon algorithme ait atteint les probabilités de classifications correctes suivantes : 0.79 en apprentissage, 0.75 en généralisation. Est il bon ou pas ? En d'autres termes, quelles performances peut-on atteindre avec un algorithme de machine learning ? Ce point est délicat et implique, notamment, la notion de difficulté intrinsèque du problème et de complexité du modèle.
 
 Tous ces points (détection et lutte contre le sur-apprentissage, complexité du modèle, difficulté du problème) seront détaillés plus loin . Ici, ce qui m'importe, c'est que vous commenciez à vous familiariser avec ces questions.
+
+### A retenir
+
+Dans ce chapitre, nous avons vu un certain nombre de notions importantes concernant l'apprentissage automatique. Ces notions seront considérées acquises pour la suite de ce cours. Pour vous aider à vérifier que vous les maitrisez, voici un bref résumé dont vous devriez être en mesure de comprendre chaque partie :
+
+Pour prendre une décision sur un exemple, les algorithmes s'appuient sur des informations numériques, regroupées dans le **vecteur de caractéristiques**.
+
+Classification et régression sont des tâches d'**apprentissage supervisé** (où la bonne réponse est connue, pour chaque exemple. On appelle parfois cette bonne réponse le **label** de l'exemple). Le clustering, quand à lui, est une tâche d'**apprentissage non supervisé** (la bonne réponse n'est pas fournie avec chaque exemple).
+
+Pour les algorithmes d'apprentissage supervisé, on distingue deux phases :
+
+- une **phase d'apprentissage**, où le **modèle** modifie ses **paramètres** pour améliorer ses performances sur la **base d'apprentissage**.
+- une **phase d'inférence**, où le modèle doit simplement, pour un exemple, prédire une réponse à partir de ses caractéristiques.
+
+Enfin, il est important de mesurer les performances de l'algorithme. **Ces performances sont mesurées sur deux bases d'exemples bien distinctes** :
+
+- La **base d'apprentissage** permet, on l'a dit, d'apprendre les paramètres du modèle. Les **performances en apprentissage** permettent de savoir si l'algorithme prédit correctement les réponses pour les exemples qu'il connait.
+- la **base de généralisation** permet d'évaluer les **performances en généralisation**, qui indiquent comment l'algorithme se comporte sur des exemples qu'il n'a jamais vu. Elle indique ainsi les performances qu'on peut atteindre de l'algorithme lorsqu'il sera utilisé en production.
+
+Enfin, pour préparer la suite, nous avons proposé une première **mesure de performances** utilisable pour les algorithmes de classification : la **probabilité d'erreur moyenne** sur un ensemble d'exemples.
+
+
+Nous pouvons maintenant passer à des explications plus détaillées concernant la phase d'apprentissage, en se penchant sur le concept d'apprentissage par optimisation.
