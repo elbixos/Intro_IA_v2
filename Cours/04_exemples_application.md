@@ -43,7 +43,7 @@ Dans ces premières applications pratiques, nous utiliserons une base d'exemple 
 
 Il s'agit d'une base assez ancienne (1988), contenant peu d'exemples (303) pour un assez grand nombre de caractéristiques (13), afin de se familiariser avec des espaces de caractéristiques assez grands.
 
-Application Pratique 1.1 : Lecture d'une base et manipulation des exemples.
+#### Application Pratique 1.1 : Lecture d'une base et manipulation des exemples.
 
 Dans cette première Application pratique, nous allons voir comment charger en mémoire une base d'exemple et visualiser un peu l'espace des caractéristiques. Je recommande de ne pas chercher à mémoriser les lignes de code en elles-même, mais concentrez vous sur deux points :
 
@@ -52,7 +52,7 @@ Dans cette première Application pratique, nous allons voir comment charger en m
 
 Le lien vers le Jupyter Notebook est ici : [https://colab.research.google.com/drive/1iySQjRxb88oNadZ9xOKrfW2gxsCy6X4K?usp=sharing](https://colab.research.google.com/drive/1iySQjRxb88oNadZ9xOKrfW2gxsCy6X4K?usp=sharing)
 
-### Application Pratique 1.2 : Quelques algorithmes de classification
+#### Application Pratique 1.2 : Quelques algorithmes de classification
 
 Dans cette seconde Application pratique, nous allons reprendre notre base Heart Disease Cleveland, et voir comment mettre en oeuvre quelques algorithmes classiques, déja abordés en cours : **plus proche voisin** ou ppv (nearest neighboor en anglais) ainsi que certains algorithmes que nous décrirons plus tard dans ce cours (**k-ppv** et **svm**).
 
@@ -62,7 +62,7 @@ Ici encore, n'essayez pas d'apprendre le code par coeur (vous pourrez faire des 
 
 Le lien vers le Jupyter Notebook est ici : [https://colab.research.google.com/drive/1xU1YtiBdYnbWPVx3opAW7ZXE4yUBju59?usp=sharing](https://colab.research.google.com/drive/1xU1YtiBdYnbWPVx3opAW7ZXE4yUBju59?usp=sharing)
 
-### Application Pratique 1.3 : Les réseaux de neurones artificiels
+#### Application Pratique 1.3 : Les réseaux de neurones artificiels
 
 Dans cette troisième application pratique, nous allons reprendre notre base Heart Disease Cleveland, et voir comment mettre en oeuvre les **réseaux de neurones**, déjà entrevus en cours.
 
