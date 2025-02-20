@@ -37,7 +37,7 @@ voici les liens vers les parties du cours :
 
 ## Travaux pratiques
 
-1. [TPs de classification](Cours\31_tp_classif.md)
+1. [TP de classification](Cours\31_tp_classif.md)
 2. [TP de régression](Cours\32_tp_regression.md)
 3. [TP de clustering](Cours\33_tp_clustering.md)
 
