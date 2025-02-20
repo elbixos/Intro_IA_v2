@@ -34,7 +34,7 @@ Au cœur de ces réseaux, il y a ... des Neurones artificiels, dont voici les pr
 
 ### Le neurone artificiel classique
 
-Un neurone standard en informatique prend des **valeurs numériques en entrée**. Notons $$x$$ ce vecteur à \(N\) composantes : $$ x = [x_1, ... x_N] $$.
+Un neurone standard en informatique prend des **valeurs numériques en entrée**. Notons $$x$$ ce vecteur à $$N$$ composantes : $$ x = [x_1, ... x_N] $$.
 
 Ce sont les informations que reçoit le neurone (ce sont nécessairement des nombres). On peut ainsi imaginer que notre neurone travaille sur des individus, et pour chaque individu, $$x_1$$ soit son âge, $$x_2$$ soit son poids, ...
 
@@ -55,7 +55,7 @@ En fonction des valeurs observées sur les entrées, le neurone calcule alors la
 $$ S = \sum_{i =1..n} w_i.x_i + w_0 $$
 
 *Remarque*
-Si vous regardez bien l'équation précédente, vous voyez qu'il y a un poids $$w_0** qui n'est associé à aucune entrée, mais à une valeur fixe $$1$$. On l'appelle le « **biais du neurone** ». Dans la pratique, c'est pris en compte automatiquement. Il permet de **décaler arbitrairement la valeur de sortie du neurone lorsqu'on lui présente un vecteur d'entrée nulle** (comme l'ordonnée à l'origine d'une droite).
+Si vous regardez bien l'équation précédente, vous voyez qu'il y a un poids $$w_0$$ qui n'est associé à aucune entrée, mais à une valeur fixe $$1$$. On l'appelle le « **biais du neurone** ». Dans la pratique, c'est pris en compte automatiquement. Il permet de **décaler arbitrairement la valeur de sortie du neurone lorsqu'on lui présente un vecteur d'entrée nulle** (comme l'ordonnée à l'origine d'une droite).
 
 Au début des réseaux de neurones (1960), les neurones fonctionnaient comme cela. Mais, dans ce cas, le neurone ne fait qu'une **combinaison linéaire de ses entrées**, ce qui lui donne des capacités limitées. Il est très rapidement apparu très utile d'ajouter au neurone un étage : sa **fonction d'activation**. La fonction d'activation est une fonction non linéaire qui prend en entrée la somme pondérée et la transforme.
 
