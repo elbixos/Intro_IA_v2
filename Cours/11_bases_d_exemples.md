@@ -203,14 +203,14 @@ Par ailleurs, une fluctuation de taille typique entre deux individus
 sera de l'ordre de 0.1 (10 cm),
 alors que la fluctuation typique de poids serait plutôt de 10 (10kg).
 Dans cet exemple, nos deux caractéristiques occupent des portions de
-\(\mathbb{R}\) très différentes.
+$$\mathbb{R}$$ très différentes.
 
 **Ce type de situation met en difficulté un grand nombre d'algorithmes**,
 pour des raisons variées.
 
 Pour remédier à cela, il sera utile de procéder à la
 **normalisation de chaque caractéristique**, qui va toutes les ramener
-dans des portions de \(\mathbb{R}\) semblables.
+dans des portions de $$\mathbb{R}$$ semblables.
 
 Il existe de multiples façons d'opérer cette normalisation. Je vais ci-dessous en décrire quelques unes.
 
@@ -466,12 +466,12 @@ Le plus simple est de regarder le nuage de points 1d de cette caractéristique.
 En ordonnée, une constante, en abscisse, le cholestérol.
 Chaque point est un patient.
 
-![cholesterol 1D](images\chol1D.png)
+![cholesterol 1D](images/chol1D.png)
 
 Il pourrait être intéressant de visualiser notre caractéristique pour chacune
 des classes possibles.
 
-![cholesterol pour chaque classe](images\chol1DmultiClasse.png)
+![cholesterol pour chaque classe](images/chol1DmultiClasse.png)
 
 Ici, par exemple, on ne trouve pas à première vue de différence flagrante entre
 les deux classes...
@@ -487,7 +487,7 @@ sans problème cardiaque, ainsi que celui des personnes ayant des problèmes
 cardiaques.
 L'ordonnée est normalisée pour être homogène à une densité de probabilité.
 
-![histogrammes cholesterol](images\histCholMultiClasse.png)
+![histogrammes cholesterol](images/histCholMultiClasse.png)
 
 C'est confirmé, les distributions sont très semblables
 (des gaussiennes ou presque, de moyenne et variance très similaires).
@@ -497,9 +497,9 @@ Pour des raisons pratiques, je présente ci-dessous les histogrammes de toutes
 les caractéristiques pour les patients sans problème cardiaque, avant de faire
 de même pour les patients avec problèmes cardiaques.
 
-![histogrammes sans pb](images\histAllSans.png)
+![histogrammes sans pb](images/histAllSans.png)
 
-![histogrammes avec](images\histAllAvec.png)
+![histogrammes avec](images/histAllAvec.png)
 
 On va chercher dans ces courbes des caractéristiques dans lesquelles les
 **histogrammes des différentes classes se superposent le moins possible**.
@@ -515,7 +515,7 @@ Si on ne regarde les caractéristiques que l'une après l'autre, on peut passer
 entre les caractéristiques.
 Voici ci-dessous le nuage 2D age / talach, pour l'ensemble des patients.
 
-![nuage 2D](images\hist2DAgeThalach.png)
+![nuage 2D](images/hist2DAgeThalach.png)
 
 On voit clairement que la seconde caractéristique (*thalach*) diminue en
 moyenne lorsque l'âge augmente.
@@ -523,7 +523,7 @@ moyenne lorsque l'âge augmente.
 Par ailleurs, et pour revenir à la sélection des données, si j'observe
 les caractéristiques pour chaque classe, cela peut être très intéressant :
 
-![nuage 2d par classe](images\nuage2dThalachOldPeak.png)
+![nuage 2d par classe](images/nuage2dThalachOldPeak.png)
 
 Le graphe précédent montre clairement que le couple thalach / oldpeak permet
 de discriminer pas mal les patients atteints de problèmes cardiaques
@@ -537,7 +537,7 @@ Je vous mets ci-dessous un nuage 3D.
 C'est beau et parfois utile, mais surtout si on peut le faire tourner pour
 l'observer sous plusieurs angles...
 
-![nuage 3d](Cours\images\nuage3d.png)
+![nuage 3d](images/nuage3d.png)
 
 Dans le cas du graphe précédent, si on ne peut pas le faire tourner,
 il est difficile d'en tirer des conclusions.
