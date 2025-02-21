@@ -15,9 +15,9 @@ voici les liens vers les parties du cours :
 
 ### Pages de niveau 1
 
-0. [Introduction et objectifs](Cours/10_introduction_pages_niveau1.md) **tout ce qui est après est à faire**
+0. [Introduction et objectifs](Cours/10_introduction_pages_niveau1.md)
 1. [Bases d'exemples](Cours\11_bases_d_exemples.md) 
-2. [Performances](Cours\12_performances.md)
+2. [Performances](Cours\12_performances.md) **tout ce qui est après est à rédiger**
 3. [Algorithmes de classification](Cours\13_algos_classif.md)
 4. [Algorithmes de régression](Cours\14_algos_regression.md)
 5. [Algorithmes de clustering](Cours\15_algos_clustering.md)
