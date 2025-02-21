@@ -16,29 +16,29 @@ voici les liens vers les parties du cours :
 ### Pages de niveau 1
 
 0. [Introduction et objectifs](Cours/10_introduction_pages_niveau1.md)
-1. [Bases d'exemples](Cours\11_bases_d_exemples.md) 
-2. [Performances](Cours\12_performances.md) **tout ce qui est après est à rédiger**
-3. [Algorithmes de classification](Cours\13_algos_classif.md)
-4. [Algorithmes de régression](Cours\14_algos_regression.md)
-5. [Algorithmes de clustering](Cours\15_algos_clustering.md)
-6. [Conclusion pages de niveau 1](Cours\16_conclusion_niveau1.md)
+1. [Bases d'exemples](Cours/11_bases_d_exemples.md) 
+2. [Performances](Cours/12_performances.md) **tout ce qui est après est à rédiger**
+3. [Algorithmes de classification](Cours/13_algos_classif.md)
+4. [Algorithmes de régression](Cours/14_algos_regression.md)
+5. [Algorithmes de clustering](Cours/15_algos_clustering.md)
+6. [Conclusion pages de niveau 1](Cours/16_conclusion_niveau1.md)
 
 ### Pages de niveau 2
 
 0. [Introduction](Cours/20_introduction_pages_niveau2.md)
-1. [Bases d'exemples](Cours\21_bases_d_exemples.md)
-2. [Algorithmes](Cours\23_algos.md)
-3. [Performances](Cours\23_performances.md)
-4. [Conclusion pages de niveau 2](Cours\24_conclusion_niveau2.md)
+1. [Bases d'exemples](Cours/21_bases_d_exemples.md)
+2. [Algorithmes](Cours/23_algos.md)
+3. [Performances](Cours/23_performances.md)
+4. [Conclusion pages de niveau 2](Cours/24_conclusion_niveau2.md)
 
 ### QCM sur les parties théoriques
 
-0. [QCM](Cours\25_qcm.md)
+0. [QCM](Cours/25_qcm.md)
 
 ## Travaux pratiques
 
-1. [TP de classification](Cours\31_tp_classif.md)
-2. [TP de régression](Cours\32_tp_regression.md)
-3. [TP de clustering](Cours\33_tp_clustering.md)
+1. [TP de classification](Cours/31_tp_classif.md)
+2. [TP de régression](Cours/32_tp_regression.md)
+3. [TP de clustering](Cours/33_tp_clustering.md)
 
 
