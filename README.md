@@ -2,7 +2,13 @@ Le cours d'Introduction à l'IA version 2
 
 ## Les supports de cours
 
-voici les liens vers les parties du cours :
+pour ceux qui n'ont pas internet sous la main, il existe un pdf complet
+du cours : [le voici](Cours/cours_complet.pdf)
+
+C'est une transformation automatique en pdf du cours qui suit, et qui présente
+de nombreux défauts, que je fixerais un de ces jours.
+
+Pour un suivi plus aisé, voici les liens vers les parties du cours :
 
 ### Pages de base :
 
@@ -40,5 +46,4 @@ voici les liens vers les parties du cours :
 1. [TP de classification](Cours/31_tp_classif.md)
 2. [TP de régression](Cours/32_tp_regression.md)
 3. [TP de clustering](Cours/33_tp_clustering.md)
-
 
