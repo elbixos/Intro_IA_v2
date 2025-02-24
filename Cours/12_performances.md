@@ -353,6 +353,7 @@ séparés).
 
 Enfin, on peut imaginer un algorithme qui, partant de la situation initiale
 précédente, donne les (très mauvais) résultats suivants :
+
 | données | résultat à 2 clusters |
 |:---:|:---:|
 | ![situation difficile](images\clustering_difficult_situation.png)	| ![mauvais clustering](images\clustering_bad.png) |
@@ -512,7 +513,8 @@ indices de silhouette de chacun des cluster qu'il a défini.
 Ci dessous, je vous présente certaines des différentes situations présentées
 précédemment, et les valeurs de silhouette correspondantes :
 
-| clusters | mauvais clustering	| 2 clusters | 3 clusters |
+|:---:|:---:|:---:|:---:|
+| clusters | ![mauvais clustering](images\clustering_bad.png)| ![3 clusters](images\clustering_choice_k_3.png)	| ![2 clusters](images\clustering_choice_k_2.png) |
 | Indices de silhouette	| -0.047 | 0.638 | 0.498 |
 
 Enfin, sachez qu'il est possible de visualiser à la fois les indices de
