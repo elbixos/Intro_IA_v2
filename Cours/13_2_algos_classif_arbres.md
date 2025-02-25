@@ -1,284 +1,196 @@
 <script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-## Algorithmes de classification
+### Arbres de décision
 
-### Introduction
+#### Principe dans le cas d'un arbre défini manuellement
 
-Au cours de notre périple concernant l'apprentissage automatique et les
-problèmes de classification, nous avons déjà eu l'occasion de croiser
-l'algorithme du **plus proche voisin** (ou ppv), et sa variante des
-**k plus proches voisins** (ou kppv ou encore knn pour les anglophones).
-Je ne reviendrais pas dessus, leur principe n'ayant pas dû vous poser trop de
-problème.
+Un arbre de décision est un modèle relativement simple lorsqu'il s'agit de prendre une décision dans un contexte supervisé, compte tenu de caractéristiques :
 
-Je vous ai également présenté de façon relativement rapide (je complèterais
-plus loin) les **réseaux de neurones denses** qui ont ces derniers temps les
-performances les meilleures (pour peu qu'on dispose de suffisamment d'exemples,
-et qu'on sache trouver une architecture adaptée au problème).
+Étant donné plusieurs caractéristiques, et un ensemble d'exemple labelisés :
+On observe une seule caractéristique, qui permet de découper l'ensemble d'exemple en deux groupes.
 
-Dans cette section, je vais vous présenter quelques algorithmes, plus anciens,
-qui ont eu leur heure de gloire pour traiter les problèmes de classification.
-L'objectif est double :
+- Si chaque groupe est suffisamment homogène en terme de décisions, on arrête.
+- Sinon, on va recommencer en 1 en considérant que l'on souhaite maintenant
+séparer mieux l'un des deux groupes crées auparavant.
 
-- D'une part, il s'agit de **vous constituer une certaine culture** du
-    *machine learning.*
-- D'autre part, il peut être utile de disposer de ces outils, soit pour
-**se faire une idée des performances** qu'on peut atteindre sur un problème
-précis, soit parce que la base d'exemples s'y prête.
-Par exemple, si elle est petite, il sera peut être compliqué pour un réseau de
-neurone d'apprendre dessus.
+Le plus simple pour bien comprendre cette notion, est de prendre un exemple :
 
-Nous verrons donc par la suite :
+La figure qui suit présente un cas de classification à deux classes : les
+patients atteints de problèmes cardiaques ou non, en fonction de deux
+caractéristiques.
+J'ai extrait 20 exemples de la base Heart Disease Cleveland, et choisi 2
+caractéristiques seulement : *thalac* et *oldpeak*.
 
-- les algorithmes basés sur la **théorie de la décision Bayésienne**,
-- **les arbres de décision**
-- et les **Support Vector Machines** (ou SVM), que nous avons déjà utilisés sans vraiment détailler leur fonctionnement.
+![problème de classification simplifié](images/small_nuage2dThalachOldPeak.png)
 
-### Thérie bayesienne de la décision
+Un arbre de décision va **choisir une caractéristique pour séparer cet ensemble au mieux, selon les classes**.
+On pourrait par exemple choisir de tester si talach est supérieur ou pas à
+147, ce qui me donnerait la figure suivante :
 
-C'est la théorie la plus ancienne, venue d'un temps où l'on ne disposait que des proba stats pour envisager de répondre à un problème de classification. On lui doit notamment d'avoir fixé une grande partie du vocabulaire du machine learning, ainsi qu'un certain nombre de notions intéressantes. Voyons ceci rapidement.
+![Arbres de décision, test 1](images/DecisionTree_test1.png)
 
-Soit un problème de classification, dans lequel, pour un vecteur de
-caractéristiques $$x$$, je dois prendre une décision parmi $$m$$ classes
-possibles.
-L'ensemble des classes possibles pourra être noté
-$$\left\{ h_i, i \in [1..m] \right\}$$.
+On voit que la partie gauche est correcte (tous les exemples sont de la classe bleue, on ne peut pas rêver mieux). Les exemples de la partie droite sont, en revanche, relativement mélangés. On va ajouter un test supplémentaire, pour les séparer. On cherche, **parmi les caractéristiques, celle qui permet de séparer au mieux ces exemples (et le seuil associé)**. Par exemple, on prendrait oldpeak > 1.6, ce qui nous amènerait à la figure suivante :
 
-La vision probabiliste de ce problème consistera à considérer que le vecteur des
-caractéristiques de notre exemple $$x$$ est une **réalisation** d'une
-**Variable Aléatoire** $$X$$.
-De même, la classe de notre exemple sera considérée comme une réalisation
-d'une variable aléatoire $$H$$.
+![Arbres de décision, test 2](images/DecisionTree_test2.png)
 
-Pour illustrer mes calculs, je prendrais pour commencer comme exemple un $$X$$
-de dimension 1 : la taille des individus.
-$$x$$, la taille observée d'un exemple, pourra valoir, par exemple, 1.62m.
-Les classes possibles seront « homme » et « femme ».
+À partir de là, **soit on considère que ce n'est pas si mal**,
+**soit on continue**.
+Si l'on continue, on cherche, parmi les 3 groupes actuel, quel test, sur
+quelle caractéristique, permettrait d'**améliorer l'homogénéité des groupes**.
+On pourrait s'intéresser au groupe en haut à droite, et décider que l'on va
+découper selon talach > 180, ce qui donnerait la figure suivante :
 
-#### Les calculs
+![Arbres de décision, test 3](images/DecisionTree_test3.png)
 
-Ceci posé, on peut s'intéresser à la quantité suivante :
+On peut s'arrêter là, ou continuer.
 
-$$f_i(x) = P(H = h_i / X =x)$$ Cette quantité correspond à la probabilité d'avoir
-la classe $$h_i$$, sachant que le vecteur de caractéristiques est $$x$$.
-Appliqué à notre exemple, ce pourrait être la
-**probabilité d'être un homme quand on mesure 1.62m**.
+Dans un premier temps, je vais m'arrêter là, pour vous présenter
+l'**arbre de décision** ainsi construit.
+Dans la figure qui suit, on présente **les différents tests** et leurs
+enchaînements.
+Ces tests sont les ronds dans mon arbre.
+Les nœuds finaux de mon arbre (**les feuilles** de l'arbre)
+**correspondent à la décision** devant être prise dans ce cas-là.
+Ils sont représentés par des carrés, dont la couleur est celle la classe
+choisie.
 
-**Idée de base de la Théorie Bayésienne de la décision** :
-De fait, on peut montrer que si l'on souhaite se tromper le moins souvent
-possible (en moyenne), il faut, pour un $$x$$ donné, calculer cette quantité
-$$f_i(x)$$ pour chaque classe possible, et choisir la classe pour laquelle
-elle est la plus grande.
+![exemple d'arbre de décision](images/DecisionTree_graph_.png)
 
-Il n'y a pas besoin de grandes démonstrations :
-**si l'on prend la classe la plus probable, on se trompe moins souvent en moyenne.**
+#### Apprentissage automatique d'un arbre
 
-Notez tout de même l'élégance du procédé. Reste à calculer cette quantité, ce qui est plus retors.
+L'objectif de cette section est d'automatiser la détermination des tests
+composant l'arbre, à partir de la base d'apprentissage.
 
-De plus, pour la suite, pour simplifier les notations, je vais adopter une **notation d'ingénieur**, qui fait hurler les mathématiciens (mais qui est beaucoup plus concise).
+Le principe est assez clair, on l'a entrevu dans la présentation des arbres
+définis manuellement.
 
-**Notation Rapide** : Au lieu d'écrire $$ P( H=h_i, X=x) $$, par exemple, j'écrirais simplement $$P(h_i / x)$$.
+C'est un problème récursif.
+Compte tenu d'un **ensemble de points labelisés**, il faut déterminer le
+**meilleur test** pour séparer cet ensemble en deux sous ensembles, dont les
+classes seront **aussi homogènes que possibles**.
 
-##### Rappels de probabilité : définitions
+Depuis le début de ce cours, je ne cesse de vous indiquer que « chercher la meilleure solution » peut souvent se ramener à un **problème d'optimisation**. C'est ce que nous ferons une fois de plus.
 
-Avec ces notations rapides, et avant d'aller plus loin, voici quelques rappels de proba sur les variables aléatoires conjointes. Pour les puristes, notez que je ne distingue pas ici probabilité et densité de probabilité (cela qui ne change rien aux calculs théoriques).
+Il faut :
 
-- $$P(h_i / x)$$, on l'a dit est la probabilité d'avoir $$h_i$$, **sachant** que le vecteur de caractéristique est \(x\).
-- $$P(h_i) $$, serait la probabilité d'avoir $$h_i$$.
-Par exemple, la probabilité dans la population, d'être un homme.
-- $$P(x) $$, serait la probabilité d'observer $$x$$.
-Par exemple, la probabilité d'observer une taille de 1.62m, au sein de la
-population.
+- une **mesure de qualité** des sous ensembles créés par un test donné,
+- une **procédure d'optimisation** qui explore l'ensemble des tests possibles
+pour trouver un test optimal ou au moins efficace.
 
+Commençons par la procédure d'optimisation.
 
-Enfin, on a deux autres grandeurs importantes :
+##### Procédure d'optimisation :
 
-- $$P(x / h_i )$$, qui est la probabilité d'observer $$x$$, **sachant** que sa classe est $$h_i$$.
-Par exemple, ce serait la probabilité de faire 1.62m quand on est un homme.
-- $$P(x , h_i)$$, qui est la probabilité d'observer $$x$$ **et** une classe $$h_i$$.
-Par exemple, ce serait la probabilité dans la population d'observer un individu
-qui soit un homme et ait une taille de 1.62m.
-(les mathématiciens préfèrent la noter $$P(x \cap h_i )$$)
+En l'occurrence, la procédure d'optimisation est ici relativement simple.
+Nous allons simplement **évaluer tous les tests possibles**
+(en optimisation, on parle de **recherche exhaustive**).
 
-À ce stade, sans entraînement, vous confondrez sans doute toutes ces quantités. Ce n'est pas dramatique, j'essayerais de les expliciter à chaque fois. L'objectif est de vous montrer comment on mène ces calculs, pas forcément que vous sachiez les refaire.
+Pour vous expliquer pourquoi c'est possible, et comment nous le ferons, je
+vous remet ci-dessous la figure correspondant à notre base d'apprentissage
+précédente.
 
-Ceci posé, je vais pouvoir continuer mes calculs...
+![problème de classification simplifié](images/small_nuage2dThalachOldPeak.png)
 
-##### Rappels de probabilité : Théorème de Bayes
+Chaque test se fait sur une seule caractéristique, par comparaison à un seuil,
+et séparera l'ensemble des exemples en deux groupes.
 
-Comme cela avait été indiqué, ce que l'on souhaite calculer s'écrit
-$$P(h_i / x)$$.
-Pour ce fait, on utilise le **théorème de Bayes** qui met en relation les trois
-quantités suivantes :
+Considérons une caractéristique, par exemple $$x$$, sur les abscisses de notre
+figure.
+Combien de tests puis-je envisager ?
 
-**Théorème de Bayes**, version notation réduite :
-$$P(a / b) = P(a , b) / P(b) $$
+Si l'on classe les $$n$$ exemples par ordre croissant de $$x$$,
+on obtient un ensemble $$[x_1..x_n]$$.
+Deux seuils tombant entre $$x_i$$ et $$x_{i+1}$$ sépareront l'ensemble en des
+groupes identiques et seront donc équivalents en termes de qualité.
+Pour disposer d'un peu de robustesse aux fluctuations des exemples,
+nous pouvons choisir, parmi tous ces seuils équivalents,
+le milieu de $$[x_i, x_i+1]$$.
 
-Appliqué à notre cas, on peut utiliser ce théorème pour en déduire :
+Ainsi, si l'on a $$n$$ exemples, sur une caractéristique, nous n'avons que
+$$n-1$$ tests possibles à évaluer.
 
-$$f_i(x) = P(h_i / x) = P(h_i , x) / P(x)$$
+Je vous ai représenté dans la figure suivantes ces tests possibles, par des
+droites verticales.
+Ce sont les droites dont l’abscisse est le milieu de deux exemples qui se
+succèdent.
 
-ou encore
+![tests possibles sur x](images/DecisionPossibleTests.png)
 
-$$f_i(x) = P(h_i / x) = P(x / h_i). P(h_i) / P(x) $$
 
-Or si l'on se souvient de l'idée de base de la
-**Théorie Bayesienne de la Décision**, il faut, pour un \(x\) donné, calculer
-cette quantité pour toutes les classes $$h_i$$ possibles, et prendre celle qui
-a donné le résultat le plus grand.
-Dans ce contexte, pour un $$x$$ donné, $$P(x)$$ est constant entre les
-différentes classes (ce serait, par exemple la probabilité de faire 1.62m).
-Pour comparer les résultats obtenus par les différentes classes, on peut simplement supprimer ce terme et ne calculer que la quantité suivante :
+Ce raisonnement peut se tenir sur chaque caractéristique de notre problème.
 
-$$g_i(x) = P(h_i / x) = P(x / h_i). P(h_i)  $$
+Ainsi, si l'on a $$n$$ exemples, dans un espace de dimension $$d$$, pour construire un nœud de l'arbre, nous aurons  $$(n-1) \times d$$ tests possibles
+à évaluer.
 
-Vous pouvez respirer, vous êtes au bout de vos peines :
-Chacun de ces termes est relativement simple à estimer.
+Voyons maintenant comment on évalue la qualité des sous ensembles crées par un test donné.
 
-- $$P(x / h_i)$$ est la probabilité, pour les membres de la classe $$h_i$$
-d'avoir la caractéristique $$x$$.
-Pour notre cas d'application, c'est la probabilité qu'un homme ait une taille
-de 1.62m.
-Ceci peut être estimé sur la base d'exemples, ou par une étude préalable.
+##### Mesure de la qualité des sous ensembles
 
-- $$P(h_i)$$ est la probabilité que la classe $$h_i$$ apparaisse.
-Pour notre cas d'application, c'est la probabilité qu'un individu soit un homme.
-Ceci aussi peut être estimé sur la base d'exemples, ou par une étude préalable.
+C'est l'un des points qui diffère entre les différents algorithmes.
+Vous vous en doutez, il existe une multitude de variantes des arbres de
+décisions.
+Dans ce cours, je cherche surtout à vous donner une certaine culture sur ces
+techniques, sans forcément chercher à entrer dans les détails mathématiques
+les plus subtils de certaines versions.
 
-Ainsi, la théorie de la décision bayesienne démontre que l'on peut construire un algorithme qui se trompe en moyenne le moins possible, sous réserve que l'on connaisse :
+Il faut que cette mesure de qualité :
 
-- $$P(h_i)$$ (ça, ça va)
-- $$P(x/h_i)$$  Ceci est la partie la plus délicate quand on s'intéresse à des
-$$x$$ plus complexes que une simple taille.
+- soit monotone (croissante ou décroissante) avec la pureté des sous ensembles
+(en termes de labels),
+- ne favorise pas trop les situations ou l'un des sous ensembles est de taille
+réduite (si l'un des sous ensemble est réduit à un point, il est totalement
+homogène en terme de labels...).
 
-Avec ces quantité, pour construire un algorithme optimal, il suffit de
-calculer, pour chaque classe :
-$$g_i(x) = P(h_i / x) = P(x / h_i). P(h_i)$$ puis de prendre la classe qui
-maximise ceci.
+Il y a eu de très nombreuses recherches sur ces problèmes, et de non moins nombreuses solutions.
 
-##### Algorithme de classification bayésien, lois normales
+On pourra notamment s'intéresser à l'**indice de Gini** (utilisé par
+l'algorithme **CART**) ou à l'**entropie** (utilisée par l'algorithme
+**C4.5**).
+Ces deux algorithmes sont les plus connus parmi les arbres de décision.
+Les notions d'indice de Gini et d'entropie sont décrites ci-dessous.
 
-Imaginons que je doive classifier des hommes et des femmes en fonction de leur taille. C'est assez simple selon cet algorithme.
+Soit un sous ensemble de point, dans lequel les $$m$$ classes possibles apparaissent chacune avec une probabilité $$p_i$$.
 
-- Je sais que la densité de proba de taille des hommes et des femmes sont tous deux des gaussiennes.
-- J'estime moyenne et écart-type des hommes dans la base d'apprentissage.
-Je fais de même avec les femmes.
-Ce seront les paramètres $$m_i, \sigma_i$$
-($$i=0$$ pour les hommes, $$i=1$$ pour les femmes, par exemple )
-- J'estime aussi la proportion d'hommes et de femmes dans ma base
-d'apprentissage $$p_i$$
-- Ceci me donne la formule de $$g_i(x)$$ pour les hommes et pour les femmes.
-$$g_i(x) = p_i \frac{1}{\sqrt{2 \pi \sigma}}  e^{\frac{(x-m_i)^2}{2\sigma_i^2}}$$
+L'**indice de Gini** de ce sous ensemble est :
+$$ \sum_{i=1}^m p_i. (1-p_i)$$
+Plus il est grand (proche de 1), plus la classe est homogène.
 
-Si je dois prendre une décision pour un $$x$$ donné, je calcule ces deux
-quantités et je choisis la classe qui a donné le résultat le plus grand.
+Le test **retenu comme optimal** est celui qui maximise la
+**moyenne des indices de Gini** des deux sous-ensembles qu'il crée.
 
-Un point important est que **sous réserve que mes estimations de moyenne et de variances soient assez bonnes, je ne pourrais pas trouver d'algorithme plus efficace** !
+Dans le cas de l'**entropie**, qui nous vient de la Théorie de l'Information et mesure globalement le désordre associé à une variable aléatoire, le calcul est légèrement différent.
 
-Vous me direz peut-être alors que si c'est si bon, à quoi nous servent les
-réseaux de neurones et autres algorithmes compliqués ?
-Tout simplement qu'**il n'est pas toujours facile d'estimer correctement**
-$$P(x/h_i)$$.
-C'est même souvent totalement impossible.
+L'entropie d'un sous ensemble est : $$\sum_{i=1}^m - p_i. log_2(p_i)$$
+Plus elle est faible (proche de 0), plus la classe est homogène.
 
-Mais voyons d'abord des cas un peu plus complexes où cet algorithme s'applique.
+Nous savons donc maintenant, pour un ensemble de point donnés, choisir le test
+qui le découpe de façon optimale selon l'une des caractéristiques.
+De **façon récursive**, nous pouvons donc
+**calculer automatiquement un arbre de décision pleinement développé**.
 
-##### Algorithme de classification bayésien, lois normales multidimensionnelles
+##### Détermination de la taille de l'arbre
 
-Imaginez que $$x$$ soit un vecteur constitué cette fois de
-**la taille ET du poids**.
-Les calculs précédents restent valables, sauf l'expression de $$P(x/h_i)$$.
+On l'a vu, il est parfois inutile, voire contreproductif d'utiliser un arbre pleinement développé. Nous pouvons envisager deux solutions pour choisir l'arbre final :
 
-Celle-ci représente la probabilité qu'un homme, par exemple, ait une taille de
-1.62m ET un poids de 73 kg.
+- soit se donner un critère d'arrêt pour stopper la définition récursive de notre arbre,
+- soit calculer tout l'arbre, puis procéder à son **élagage**, en supprimant des tests peu utiles.
 
-Dans ce cas très précis, on sait que, pour chaque classe, le couple
-$$(poids , taille)$$ suit une **loi normale multivariée**, qui est une
-extension des gaussiennes aux dimensions supérieures.
-Sans entrer dans les détails, cette loi est paramétrée par :
+C'est souvent la seconde solution qui sera utilisée, en mesurant si le gain en termes d'indice de Gini (par exemple) apporté par chaque test est vraiment conséquent.
 
-- moyenne de taille
-- moyenne des poids
-- variance des taille
-- variance des poids
-- covariance existant entre les deux.
+#### Conclusion sur les arbres de décision
 
-On peut estimer les trois dernières par la matrice de covariance poids taille,
-qui est une matrice 2x2.
-On dispose ainsi d'une formule pour $$P(x/h_i)$$ et notre algorithme est donc
-applicable.
+Les arbres de décision occupent une place importante dans l'histoire de l'apprentissage automatique, mais pas seulement dans ce domaine. Les raisons de leur succès sont :
 
-Tant que les caractéristiques suivent une loi normale multivariée, on peut s'en
-sortir comme cela.
+- la simplicité de leur principe et de leur mise en œuvre,
+- la variété des régions de décisions qu'ils peuvent produire,
+- la facilité avec laquelle on peut suivre le processus de décision.
 
-Ce qui peut arriver, c'est que le nombre d'exemples de la base soit très
-faible, et que l'estimation des matrices de covariances soit peu précise.
-Dans ce cas, notre algorithme ne fonctionne pas très bien.
+Les entreprises en raffolent. Pour vous donner une idée, la version manuelle des arbres de décision est aujourd'hui encore enseignée comme un processus d'aide à la décision pour les futurs cadres.
 
-Mais on dispose encore éventuellement d'un outil : l'
-**indépendance des caractéristiques entre elles**.
-Si je dois prédire le salaire d'un individu, en fonction de sa taille et de
-son QI, il semble raisonnable de supposer que
-**QI et taille sont indépendants**.
+*Je soupçonne fort les grands groupes de s'en servir pour mettre au point les cartes de questions utilisées par les centres d'appels délocalisés auxquels ils sous-traitent leur service après-vente. Vous savez : « Avez vous redémarré votre appareil ? Si oui, observez vous un clignotement... ». Notez que, dans ce cas, on finit relativement souvent dans la feuille « Je dois en référer à un technicien compétent... » .*
 
-$$ P(x/h_i) = P(taille/h_i) . P(QI/h_i) $$ qui utilise l'indépendance entre
-taille et QI pour calculer la proba conjointe du couple (taille,QI)
+En apprentissage automatique, c'est une technique assez ancienne (C4.5 date de 1993). En dépit de son âge, C4.5 (ou CART qui lui est assez semblable) restait, en 2008, dans le top 10 des algorithmes d'exploration de données. Un peu délaissés ces dernières années du fait de l’avènement des réseaux de neurones, **les arbres de décision sont néanmoins un des outils** qu'il faut avoir sous la main, si l'**on veut évaluer rapidement les performances que l'on peut obtenir sur un jeu de données**.
 
-$$P(taille/h_i)$$ et $$(QI/h_i) $$ suivent une loi gaussienne.
-Dans ce cas, je n'ai plus besoin d'estimer la covariance taille QI, et obtenir
-une estimation plus robuste même si ma base est relativement petite.
-
-Ceci à donné naissance à un algorithme bien connu :
-
-##### Le classifieur bayésien naïf
-
-Si jamais vos caractéristiques ne sont pas indépendantes (par exemple, la
-taille et le poids ne sont pas indépendants), ou que vos caractéristiques ne
-suivent pas vraiment chacune des gaussiennes (pensez à une distribution de
-salaires, par exemple, c'est tout sauf gaussien), les chercheurs en
-apprentissage automatique ont eu pendant longtemps un réflexe assez salvateur
-dans de nombreux cas : **faire comme si ces conditions étaient vraies**.
-
-Après tout, si les performances ne sont pas trop mauvaises, pourquoi chercher
-plus loin ?
-
-C'est le concept d'**algorithme bayésien naïf**, dans lequel les
-caractéristiques sont supposées **toutes indépendantes entre elles**, et
-**toutes gaussiennes**.
-
-Je vous en parle car il est assez drôle, mais aussi car il peut vous dépanner
-grandement dans des cas où la **base est toute petite**, et où les
-**caractéristiques sont à peu près gaussiennes**.
-Cet algorithme limite en effet l'influence de la malédiction de la
-dimensionalité...
-
-Ce classifieur est implémenté en python dans la librairie *sklearn**, par le
-module *GaussianNB* (Gaussian Naive Bayes).
-
-##### Conclusion sur ces algorithmes
-
-Extrêmement élégants dans leur formulation, et très efficaces tant que l'on
-dispose d'une formule pour calculer $$P(x/h_i)$$, ils ont fait le bonheur de
-plusieurs générations.
-Ils sont un peu oubliés maintenant que l'on traite des problèmes pour lesquels
-les caractéristiques ne sont clairement pas gaussiennes et sont extrêmement
-nombreuses...
-
-En revanche, l'idée d’**interpréter les sorties d'un classifieur** comme une
-**probabilité d'observer une classe** a infusé vers de nombreux algorithmes
-(dont les réseaux de neurones).
-
-C'est vrai à un point que j'estime que si vous ne deviez retenir qu'une chose de
-toute cette section, je dirais que c'est ce qui suit :
-
-La **théorie Bayésienne de la décision** tente d'estimer la
-**probabilité de chaque classe** compte tenu
-**des caractéristiques de l'exemple** traité (et choisit la plus probable).
-
-
-
-
-
-
+Ceci d'autant plus que Python les implémente directement sous la forme des objets *DecisionTreeClassifier* de *sklearn*, qui rend leur utilisation très simple.
 
