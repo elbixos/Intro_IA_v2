@@ -30,7 +30,11 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
     - [Arbres de Décision](Cours/13_2_algos_classif_arbres.md)
     - [SVM](Cours/13_3_algos_classif_svm.md)
     - [Application pratique](Cours/13_4_algos_classif_Application.md)
-4. [Algorithmes de régression](Cours/14_algos_regression.md) **tout à partir de là est à rédiger**
+4. Algorithmes de régression : **tout à partir de là est à rédiger**
+    - [Régression linéaire](Cours/14_1_algos_regression_lin.md)
+    - [Régression linéaire multiple, SVR, DTR](Cours/14_2_algos_regression_lin_mult.md)
+    - [Régression par réseaux de neurones](Cours/14_3_algos_regression_DNN.md)
+    - [Applications pratiques Régression](Cours/14_4_algos_regression_Application.md) 
 5. [Algorithmes de clustering](Cours/15_algos_clustering.md)
 6. [Conclusion pages de niveau 1](Cours/16_conclusion_niveau1.md)
 
