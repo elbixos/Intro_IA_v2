@@ -26,7 +26,7 @@ L'équation de n'importe quelle droite (non verticale) passant par ce point $$(M
 est donnée par : $$\frac{y - M[1]}{x-M[0]} = p $$, avec $$p \in \mathbb{R}$$
 
 en bricolant un peu cette équation, on passe successivement à :
-$$y - M[1] = p.(x-M[0]$$, ou encore : $$y - M[1] - p.(x-M[0]$$ 
+$$y - M[1] = p.(x-M[0]$$, ou encore : $$y - M[1] - p.(x-M[0]) = 0$$ 
 
 Pour un paramètre p fixé (donc pour une droite donnée), si le vecteur de caractéristiques est $$[x,y]$$, on peut donc calculer la quantité $$y - M[1] - p.(x-M[0])$$. Le signe nous indique si le point est au dessus (>0) ou en dessous de la droite (<0).
 
