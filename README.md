@@ -25,16 +25,15 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
 1. [Bases d'exemples](Cours/11_bases_d_exemples.md) 
 2. [Performances](Cours/12_performances.md) 
 3. Algorithmes de classification :
-    - [Introduction](Cours/13_0_algos_classif_intro.md)
     - [Théorie Bayesienne de la décision](Cours/13_1_algos_classif_bayes.md)
     - [Arbres de Décision](Cours/13_2_algos_classif_arbres.md)
     - [SVM](Cours/13_3_algos_classif_svm.md)
     - [Application pratique](Cours/13_4_algos_classif_Application.md)
-4. Algorithmes de régression : **tout à partir de là est à rédiger**
+4. Algorithmes de régression : 
     - [Régression linéaire](Cours/14_1_algos_regression_lin.md)
-    - [Régression linéaire multiple, SVR, DTR](Cours/14_2_algos_regression_lin_mult.md)
+    - [Régression linéaire multiple, SVR, DTR](Cours/14_2_algos_regression_lin_mult.md)**tout à partir de là est à rédiger**
     - [Régression par réseaux de neurones](Cours/14_3_algos_regression_DNN.md)
-    - [Applications pratiques Régression](Cours/14_4_algos_regression_Application.md) 
+    - [Application pratique Régression](Cours/14_4_algos_regression_Application.md) 
 5. [Algorithmes de clustering](Cours/15_algos_clustering.md)
 6. [Conclusion pages de niveau 1](Cours/16_conclusion_niveau1.md)
 
