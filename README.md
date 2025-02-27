@@ -44,7 +44,10 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
 
 0. [Introduction](Cours/20_introduction_pages_niveau2.md) **TODO**
 1. [Bases d'exemples](Cours/21_bases_d_exemples.md) **TODO**
-2. [Algorithmes](Cours/23_algos.md) **TODO**
+2. Algorithmes
+    - [Interpretation probabiliste](Cours/22_1_algos_interpret_proba.md)
+    - One vs One et One vs Rest
+    - Boosting, Bagging
 3. [Performances](Cours/23_performances.md) **TODO**
 4. [Conclusion pages de niveau 2](Cours/24_conclusion_niveau2.md) **TODO**
 
