@@ -60,6 +60,7 @@ On compte simplement pour chaque exemple dans quelle case $$(label, prediction)$
 Par exemple, on comptera le nombre d'exemples d'individus femme, dont l'algorithme a prédit qu'ils étaient des hommes. On placera ce nombre dans la case $$ (Fvrai, Hpred) $$ de la matrice suivante.
 
 On pourrait observer quelque chose comme :
+
 |:--:|:--:|:--:|
 | | Hvrai | Fvrai |
 | Hpred	| 280 | 10 |
@@ -203,7 +204,7 @@ La question centrale de cette section consiste à expliciter des mesures
 permettant de quantifier la qualité d'un algorithme de régression sur un
 ensemble d'exemples.
 
-On commence par s'intéresser à l'$$erreur commise pour chaque exemple$$.
+On commence par s'intéresser à l'**erreur commise pour chaque exemple**.
 Pour un exemple, cette erreur s'écrit $$ e =  y - yp $$
 
 Si pour un exemple, la valeur attendue était $$ [0.4, 0.35] $$ et que
