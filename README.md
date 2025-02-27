@@ -34,27 +34,27 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
     - [Application pratique](Cours/13_4_algos_classif_Application.md)
 4. Algorithmes de régression : 
     - [Régression linéaire](Cours/14_1_algos_regression_lin.md)
-    - [Régression linéaire multiple, SVR, DTR](Cours/14_2_algos_regression_lin_mult.md) **tout à partir de là est à rédiger**
+    - [Régression linéaire multiple, SVR, DTR](Cours/14_2_algos_regression_lin_mult.md) 
     - [Régression par réseaux de neurones](Cours/14_3_algos_regression_DNN.md)
     - [Application pratique Régression](Cours/14_4_algos_regression_Application.md) 
-5. [Algorithmes de clustering](Cours/15_algos_clustering.md)
+5. [Algorithmes de clustering](Cours/15_algos_clustering.md) **TODO**
 6. [Conclusion pages de niveau 1](Cours/16_conclusion_niveau1.md)
 
 ### Pages de niveau 2
 
-0. [Introduction](Cours/20_introduction_pages_niveau2.md)
-1. [Bases d'exemples](Cours/21_bases_d_exemples.md)
-2. [Algorithmes](Cours/23_algos.md)
-3. [Performances](Cours/23_performances.md)
-4. [Conclusion pages de niveau 2](Cours/24_conclusion_niveau2.md)
+0. [Introduction](Cours/20_introduction_pages_niveau2.md) **TODO**
+1. [Bases d'exemples](Cours/21_bases_d_exemples.md) **TODO**
+2. [Algorithmes](Cours/23_algos.md) **TODO**
+3. [Performances](Cours/23_performances.md) **TODO**
+4. [Conclusion pages de niveau 2](Cours/24_conclusion_niveau2.md) **TODO**
 
 ### QCM sur les parties théoriques
 
-0. [QCM](Cours/25_qcm.md)
+0. [QCM](Cours/25_qcm.md) **TODO**
 
 ## Travaux pratiques
 
-1. [TP de classification](Cours/31_tp_classif.md)
-2. [TP de régression](Cours/32_tp_regression.md)
-3. [TP de clustering](Cours/33_tp_clustering.md)
+1. [TP de classification](Cours/31_tp_classif.md) **TODO**
+2. [TP de régression](Cours/32_tp_regression.md) **TODO**
+3. [TP de clustering](Cours/33_tp_clustering.md) **TODO**
 
