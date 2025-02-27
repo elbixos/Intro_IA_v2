@@ -49,7 +49,7 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
     - One vs One et One vs Rest
     - Boosting, Bagging
 3. [Performances](Cours/23_performances.md) **TODO**
-4. [Conclusion pages de niveau 2](Cours/24_conclusion_niveau2.md) **TODO**
+4. [Conclusion pages de niveau 2](Cours/24_conclusion_niveau2.md)
 
 ### QCM sur les parties théoriques
 

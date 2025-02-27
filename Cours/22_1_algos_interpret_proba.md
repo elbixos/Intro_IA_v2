@@ -57,7 +57,7 @@ Le calcul est relativement simple.
 2. On divise chaque résultat par la somme des éléments, pour que la somme vaille 1.
 
 Calcul de softmax pour une composante :
-$$ y\_{soft,k}  = \frac{ e^{y_k} }{ \sum_{i=1..m} e^{y_i} } $$
+$$ y_{soft,k}  = \frac{ e^{y_k} }{ \sum_{i=1..m} e^{y_i} } $$
 
 Dans le cas de l'exemple proposé, $$softmax([-2, 0.3, 12.5])$$ vaut
 $$[5e-07 , 5e-06 , 0.9999]$$
