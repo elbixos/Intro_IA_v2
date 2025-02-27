@@ -31,7 +31,7 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
     - [Application pratique](Cours/13_4_algos_classif_Application.md)
 4. Algorithmes de régression : 
     - [Régression linéaire](Cours/14_1_algos_regression_lin.md)
-    - [Régression linéaire multiple, SVR, DTR](Cours/14_2_algos_regression_lin_mult.md)**tout à partir de là est à rédiger**
+    - [Régression linéaire multiple, SVR, DTR](Cours/14_2_algos_regression_lin_mult.md) **tout à partir de là est à rédiger**
     - [Régression par réseaux de neurones](Cours/14_3_algos_regression_DNN.md)
     - [Application pratique Régression](Cours/14_4_algos_regression_Application.md) 
 5. [Algorithmes de clustering](Cours/15_algos_clustering.md)
