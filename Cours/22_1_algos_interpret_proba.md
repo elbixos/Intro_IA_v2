@@ -5,7 +5,7 @@
 
 ### Interprétation probabiliste des sorties d'un classifieur
 
-Quand on dispose d'un **classifieur$$ qui associe une classe $$C_i$$ à un
+Quand on dispose d'un **classifieur** qui associe une classe $$C_i$$ à un
 objet, on souhaite souvent savoir avec quelle probabilité il a choisi cette
 classe.
 C'est un concept que nous avons déjà croisé dans la présentation de la théorie bayésienne de la décision.
