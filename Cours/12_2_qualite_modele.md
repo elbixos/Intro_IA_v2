@@ -77,7 +77,7 @@ L’algorithme a quasiment appris par cœur chaque exemple de la base
 d’apprentissage, **au détriment de sa capacité à généraliser**.
 
 On voit par exemple que sa prédiction pour $$x=12$$ est pour le moins
-fantaisiste $$y_pred = -9$$.
+fantaisiste $$y_{pred} = -9$$.
 Ses **performances en généralisation** sont bien moins bonnes que celle d'une
 simple droite.
 Ici, notre modèle est **trop complexe** (en particulier pour un nombre
