@@ -138,68 +138,101 @@ On dit que **$$x$$ et $$y$$ ne sont pas corrélées linéairement**.
 
 #### Mesures de la corrélation linéaire
 
-Pour quantifier cette corrélation linéaire, on calcule le coefficient de corrélation par la formule suivante.
+Pour **quantifier** l'importance de cette corrélation linéaire, on calcule le
+coefficient de corrélation par la formule suivante.
 
 Formule du **coefficient de corrélation** : 
 $$\rho = \frac{\sigma_{x,y}}{\sigma_x.\sigma_y} $$
 
-Avec \( \sigma_{x,y} \) la covariance de \(x\) et de \(y\), et \sigma_x\), \sigma_y\) les écarts-types respectifs de \(x\) et de \(y\).
+Avec $$\sigma_{x,y}$$ la covariance de $$x$$ et de $$y$$, et $$sigma_x,\sigma_y$$ les écarts-types respectifs de $$x$$ et de $$y$$.
 
-    Ce coefficient est compris entre -1 et 1.
-    Le signe nous indique si la corrélation est positive ou négative.
-    Plus sa valeur absolue est forte, plus la dépendance entre \(x\) et \(y\) est forte (plus les résidus de la régression sont faibles).
-    Un coefficient très faible indique soit des résidus très grands, soit une absence de corrélation entre \(x\) et \(y\).
+- Ce coefficient est compris entre -1 et 1.
+- Le signe nous indique si la corrélation est positive ou négative.
+- Plus sa valeur absolue est forte, plus la dépendance entre $$x$$ et $$y$$
+est forte (plus les résidus de la régression sont faibles).
+- Un coefficient très faible indique soit des $$résidus très grands$$, soit
+une absence de corrélation entre $$x$$ et $$y$$.
 
 Ci-dessous, vous trouverez quelques exemples de données et leurs coefficients de corrélation pour illustrer tout ceci.
-\(\rho = \) 0.924	\(\rho = \) 0.537	\(\rho = \) -0.625	
 
-\(\rho = \) -0.011
-
-corrélation positive forte	corrélation positive moins forte	corrélation négative	pas de corrélation
+| $$\rho = 0.924$$ | $$\rho = 0.537$$ | $$\rho = -0.625	$$ | $$\rho = -0.011$$ |
+|:--:|:--:|:--:|:--:|
+| ![corrélation positive forte](images/regression_rho_fort.png) | ![corrélation positive moins forte](images/regression_rho_faible.png) | ![corrélation négative](images/regression_rho_negatif.png) | ![pas de corrélation](images/regression_rho_nul.png) |
 
 Voilà pour le principe et les calculs. Voyons enfin quelques remarques à garder en tête en permanence quand on utilise cette notion.
 
-Remarques importantes sur la corrélation linéaire
+#### Remarques importantes sur la corrélation linéaire
 
 La corrélation linéaire et son coefficient sont extrêmement répandus dans l'ensemble des sciences, dès lors qu'il s'agit de savoir si quelque chose permet de prédire autre chose. C'est le cas en physique, biologie, médecine, finance, ... Il faut néanmoins faire attention aux points suivants.
 
-Qualité de l'estimation de dépendance statistique
+##### Qualité de l'estimation de dépendance statistique
 
-Quelle que soit la valeur du coefficient, il faut s'assurer que cette valeur a un sens statistique (que vous avez assez d'échantillons pour pouvoir conclure) avant de conclure à une quelconque dépendance entre \(\x\) et \(\y\). Pour cela, on recourt en général à un test de Fisher (non détaillé ici).
+Quelle que soit la valeur du coefficient, il faut s'assurer que cette valeur
+a un sens statistique (que vous avez assez d'échantillons pour pouvoir
+conclure) avant de conclure à une quelconque dépendance entre $$x$$ et $$y$$.
+Pour cela, on recourt en général à un **test de Fisher** (non détaillé ici).
 
-La corrélation n'indique pas de causalité
+##### La corrélation n'indique pas de causalité
 
-Une notion primordiale à retenir : la corrélation mesure le fait que les variables présentent une dépendance statistique, pas que l'une soit la cause de l'autre.
+Une notion primordiale à retenir : **la corrélation mesure le fait que les variables présentent une dépendance statistique, pas que l'une soit la cause de l'autre**.
 
 Dans les exemples que je vous ai donnés en tête de section, vous avez deux exemples parlants : 
 
-    Le nombre de cigarettes fumées est corrélé négativement avec l'espérance de vie. Dans ce cas, ce sont des médecins et des biologistes qui ont prouvé que fumer nuit à la santé.
-    Taille et poids sont corrélés positivement. Pourtant, vous pourrez manger tant que vous voudrez, si vous êtes adulte, vous ne grandirez pas.
+- Le nombre de cigarettes fumées est corrélé négativement avec l'espérance de
+vie.
+Dans ce cas, ce sont des médecins et des biologistes qui ont prouvé que fumer
+nuit à la santé.
+- Taille et poids sont corrélés positivement.
+Pourtant, vous pourrez manger tant que vous voudrez, si vous êtes adulte,
+vous ne grandirez pas.
 
-Pour être plus clair, voici un exemple de corrélation sans causalité.
+Pour être plus clair, voici ci-dessous un exemple de corrélation sans
+causalité.
 
-On observe une corrélation très forte entre le nombre de coups de soleils quotidiens et le nombre de personnes portant des lunettes de soleil ce jour-là. Il n'y a clairement aucune causalité de l'un à l'autre. Il y a en revanche une variable cachée (l'ensoleillement) qui influe sur les deux variables observées. (Pensez-y quand on vous parlera de statistiques ethniques, par exemple.)
+On observe une corrélation très forte entre le nombre de coups de soleils
+quotidiens et le nombre de personnes portant des lunettes de soleil ce
+jour-là.
+Il n'y a clairement **aucune causalité** de l'un à l'autre.
+Il y a en revanche une **variable cachée** (l'ensoleillement) qui influe sur
+les deux variables observées.
+(Pensez-y quand on vous parlera de statistiques ethniques, par exemple.)
 
-Retenez aussi ceci : l'apprentissage automatique ne démontre jamais une causalité. Il prend en compte ou démontre des corrélations entres les informations qu'il traite (et le fait souvent incroyablement bien).
+Retenez aussi ceci :
+**l'apprentissage automatique ne démontre jamais une causalité**.
+Il prend en compte ou démontre des corrélations entres les informations qu'il
+traite (et le fait souvent incroyablement bien).
 
-La corrélation n'est pas nécessairement linéaire
+##### La corrélation n'est pas nécessairement linéaire
 
 La corrélation linéaire mesure la force d'une relation affine entre les données. Ci-dessous, un exemple dans lequel les données sont clairement corrélées, mais pas selon une droite. La corrélation linéaire de ces deux variables est finalement assez faible.
 
-correlation non linéaire
+![correlation non linéaire](images/learningBaseOverfitting.png)
 
-Intérêt pour l'apprentissage automatique
+##### Intérêt pour l'apprentissage automatique
 
-En dépit des réserves évoquées ci-dessus, la régression peut s'avérer très intéressante pour nous lorsqu'il s'agit de sélectionner des caractéristiques.
+En dépit des réserves évoquées ci-dessus, la régression peut s'avérer très
+intéressante pour nous lorsqu'il s'agit de
+**sélectionner des caractéristiques**.
 
-Imaginez un problème de prédiction de rentabilité de sites d'implantation pour une entreprise. Vous disposez disons de 500 exemples de sites, chacun défini par 50 caractéristiques (localisation, population avoisinante,...) dans l'objectif de prédire le chiffre d'affaire possible sur ce site.
+Imaginez un problème de prédiction de rentabilité de sites d'implantation
+pour une entreprise.
+Vous disposez disons de 500 exemples de sites, chacun défini par 50
+caractéristiques (localisation, population avoisinante,...) dans l'objectif
+de prédire le chiffre d'affaire possible sur un nouveau site.
 
-Si on utilise un réseau de neurones, par exemple, pour faire cette prédiction, nos malheureux 1000 exemples sur 30 caractéristiques risquent fort de conduire à un fort sur-apprentissage. Il pourrait être judicieux de ne retenir, parmi ces 50 caractéristiques, que les 5 ou 10 qui « aident le mieux » à prédire la rentabilité.
+Si on utilise un réseau de neurones, par exemple, pour faire cette prédiction,
+nos malheureux 1000 exemples sur 30 caractéristiques risquent fort de conduire
+à un fort **sur-apprentissage**.
+Il pourrait être judicieux de ne retenir, parmi ces 50 caractéristiques, que
+les 5 ou 10 qui « aident le mieux » à prédire la rentabilité.
 
 Une façon rapide de faire cela rapidement, serait de calculer le coefficient de corrélation existant entre chaque caractéristique et la rentabilité. On peut alors classer les caractéristiques par ordre décroissant (de valeur absolue du coefficient de corrélation), pour ne retenir que les meilleures.
 
 Cette approche n'est pas sans risques, mais cela peut être fait très rapidement, et testé aussitôt pour mesurer les performances de la prédiction.
 
-Attention aux corrélations non linéaires et à ne pas introduire de multiples caractéristiques qui mesurent en fait la même chose. 
+**Attention** :
+
+- aux corrélations non linéaires et
+- à ne pas introduire de multiples caractéristiques qui mesurent en fait la même chose. 
 
 
