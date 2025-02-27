@@ -55,7 +55,7 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
     - Validation croisée
     - Compromis biais variance
     - Régularisation de modèles
-    -[Entropie croisee](Cours/23_4_performances_entropie_croisee.md)
+    - [Entropie croisee](Cours/23_4_performances_entropie_croisee.md)
 4. [Conclusion pages de niveau 2](Cours/24_conclusion_niveau2.md)
 
 ### QCM sur les parties théoriques
