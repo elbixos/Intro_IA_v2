@@ -42,10 +42,10 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
 
 ### Pages de niveau 2
 
-0. [Introduction](Cours/20_introduction_pages_niveau2.md) **TODO**
+0. [Introduction](Cours/20_introduction_pages_niveau2.md)
 1. Bases d'exemples
     - Réduction de dimensionalité
-    - [Problèmes liés aux bases](Cours/21_2_bases_problemes.md) **TODO**
+    - [Problèmes liés aux bases](Cours/21_2_bases_problemes.md)
     - Augmentation de données
 2. Algorithmes
     - [Interpretation probabiliste](Cours/22_1_algos_interpret_proba.md)
