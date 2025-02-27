@@ -23,7 +23,10 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
 
 0. [Introduction et objectifs](Cours/10_introduction_pages_niveau1.md)
 1. [Bases d'exemples](Cours/11_bases_d_exemples.md) 
-2. [Performances](Cours/12_performances.md) 
+2. Performances :
+    - [Quantification des performances](Cours/12_1_performances.md) 
+    - [Qualité du modèle](Cours/12_2_qualite_modele.md) 
+    - [Descente du gradient](Cours/12_3_descente_gradient.md)
 3. Algorithmes de classification :
     - [Théorie Bayesienne de la décision](Cours/13_1_algos_classif_bayes.md)
     - [Arbres de Décision](Cours/13_2_algos_classif_arbres.md)
