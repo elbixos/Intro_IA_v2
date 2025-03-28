@@ -64,7 +64,6 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
 
 ## Travaux pratiques
 
-1. [TP de classification](Cours/31_tp_classif.md) **TODO**
-2. [TP de régression](Cours/32_tp_regression.md) **TODO**
-3. [TP de clustering](Cours/33_tp_clustering.md) **TODO**
+1. [TP de classification](Cours/31_tp_classif.md)
+
 

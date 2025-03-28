@@ -11,6 +11,6 @@ De même, justifiez tous les choix que vous faites (taille des bases, normalisat
 
 Je vous invite à faire part de vos réflexions sur le temps de calcul de chaque algorithme, que ce soit en apprentissage ou en prédiction.
 
-Pour vous aider à débuter ce TP, vous pouvez utiliser le code disponible dans le lien suivant : https://colab.research.google.com/drive/1fsJkK7qbAZ9_tUHKXgOsqlZtxA1YRgrt?usp=sharing
+Pour vous aider à débuter ce TP, vous pouvez utiliser le code disponible dans le lien suivant : [https://colab.research.google.com/drive/1fsJkK7qbAZ9_tUHKXgOsqlZtxA1YRgrt?usp=sharing](https://colab.research.google.com/drive/1fsJkK7qbAZ9_tUHKXgOsqlZtxA1YRgrt?usp=sharing)
 
 Bon travail !
