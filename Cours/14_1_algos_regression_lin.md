@@ -112,7 +112,7 @@ Calculer la régression linéaire de \(y\) par rapport à \(x\), revient à obse
 On peut donc envisager plusieurs cas :
 
 | Croissance | Décroissance	| Constance |
-| ![croissance](images/regression_croissante.png) | ![regression décroissante](images/regression_croissante.png) | ![regression constante](images/regression_constante.png) |
+| ![croissance](images/regression_croissante.png) | ![regression décroissante](images/regression_decroissante.png) | ![regression constante](images/regression_constante.png) |
 
 Dans le premier cas, quand $$x$$ **augmente**,
 l’**espérance de $$y$$ augmente**.
