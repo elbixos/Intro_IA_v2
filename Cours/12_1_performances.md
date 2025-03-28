@@ -87,13 +87,25 @@ Ce qui va suivre est peut être assez complexe à comprendre si vous n'avez pas 
 Je vous présente aussi la version probabiliste présentant cette fois $$P(prediction / label) $$. Prenez le temps d'observer le diviseur de ces probabilités - *c'est le nombre d'exemples de la vraie classe correspondante (300 pour les hommes, 200 pour les femmes)* .
 
 |:--:|:--:|:--:|
-| | Fvrai | Hpred |
-| Hvrai | 180 / 300 | 10 / 200 |
+| | Hvrai | Fpred |
+| Hvrai | 280 / 300 | 10 / 200 |
 | Fpred	| 20 / 300 | 190 / 200 |
 
-Cette dernière matrice me permet de voir que notre algorithme se débrouille moins bien pour reconnaître les hommes que pour reconnaître les femmes. Il commet des erreurs quand on lui présente un homme avec une probabilité de 0.066 (20/300), contre 0.05 pour les femmes (10/200)
+**La matrice précédente me donne par exemple la probabilité que mon algo dise homme quand on lui présente une femme (10/100)**
+
+Cette dernière matrice me permet de voir que notre algorithme se débrouille moins bien pour reconnaître les hommes que pour reconnaître les femmes.
+Il commet des erreurs quand on lui présente un homme avec une probabilité de 0.066 (20/300), contre 0.05 pour les femmes (10/200)
 
 C'est cette dernière matrice qu'il faut observer si l'on souhaite évaluer comment l'algorithme se débrouille sur les différentes classes du problème
+
+Enfin, je peux aussi vous présenter la matrice suivante $$P(label / prédiction) $$. Prenez le temps d'observer le diviseur de ces probabilités - *c'est le nombre d'exemples de la classe prédite (290 pour les hommes, 210 pour les femmes)* .
+
+|:--:|:--:|:--:|
+| | Hvrai | Fpred |
+| Hvrai | 280 / 290 | 10 / 290 |
+| Fpred	| 20 / 210 | 190 / 210 |
+
+**La matrice précédente me donne entre autres la probabilité que l'exemple soit un homme quand l'algo dit femme (20/210)**
 
 ##### Précision / Rappel
 
