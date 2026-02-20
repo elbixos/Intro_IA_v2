@@ -286,3 +286,8 @@ Ainsi, on explore de plus grandes portions de l'espace des paramètres,
 multipliant les chances de trouver, sinon le minimum global, au moins un
 **minimum local présentant des performances suffisantes**.
 
+### Attention aux gradients nuls
+
+Pour illustrer ce problème, on peut aller voir ceci : [https://colab.research.google.com/drive/1Gy1UJdNDs62SzUEoRlfRRtOgx4CEJxwx?usp=sharing](https://colab.research.google.com/drive/1Gy1UJdNDs62SzUEoRlfRRtOgx4CEJxwx?usp=sharing)
+
+On peut aussi ce demander comment fonctionne une descente de gradient sur terrain plat
