@@ -64,6 +64,7 @@ Pour un suivi plus aisé, voici les liens vers les parties du cours :
 
 ## Travaux pratiques
 
-1. [TP de classification](Cours/31_tp_classif.md)
+1. [TP 1](Cours/31_tp_classif.md)
+2. [TP 2](Cours/32_tp2.md)
 
 
